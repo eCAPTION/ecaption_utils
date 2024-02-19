@@ -7,12 +7,14 @@ class FaustApplication(enum.Enum):
     Gateway = "gateway"
     WebScraper = "web_scraper"
     NLP = "nlp"
+    NewsEmbedding = "news_embedding"
 
 
 faust_application_to_port: dict[FaustApplication, int] = {
     FaustApplication.Gateway: 6066,
     FaustApplication.WebScraper: 6067,
     FaustApplication.NLP: 6068,
+    FaustApplication.NewsEmbedding: 6069,
 }
 
 

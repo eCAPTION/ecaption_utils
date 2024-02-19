@@ -15,3 +15,8 @@ class NewArticleTextEvent(InformationQueryingComponentEvent):
 
 class MaximalEntityCooccurrenceSetEvent(InformationQueryingComponentEvent):
     maximal_entity_cooccurrence_set: list[list[str]]
+
+
+class NewsEmbeddingEvent(InformationQueryingComponentEvent):
+    node_occurrences: dict[str, int]
+    adjlist: dict[str, list[str]]
