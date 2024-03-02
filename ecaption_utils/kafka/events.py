@@ -6,7 +6,7 @@ class InformationQueryingComponentEvent(faust.Record):
 
 
 class NewArticleUrlEvent(InformationQueryingComponentEvent):
-    pass
+    request_id: int
 
 
 class NewArticleTextEvent(InformationQueryingComponentEvent):
