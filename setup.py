@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="ecaption_utils",
-    version="0.0.5",
+    version="0.0.6",
     description="Package containing common utility functions for the eCAPTION application",
     url="https://github.com/eCAPTION/ecaption_utils.git",
     author="Chow En Rong",

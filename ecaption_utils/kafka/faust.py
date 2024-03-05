@@ -8,12 +8,13 @@ class FaustApplication(enum.Enum):
     WebScraper = "web_scraper"
     NLP = "nlp"
     NewsEmbedding = "news_embedding"
-    Chatbot = "Chatbot"
+    Chatbot = "chatbot"
+    NewsSearch = "news_search"
 
 
 def get_faust_app(app_id: FaustApplication, broker_url: str, port: int):
     return faust.App(
-        app_id.value,  # TODO: Might have to make this unique when scaling horizontally
+        app_id.value,
         broker=broker_url,
         web_port=port,
     )

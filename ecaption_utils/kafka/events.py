@@ -20,3 +20,7 @@ class MaximalEntityCooccurrenceSetEvent(InformationQueryingComponentEvent):
 class NewsEmbeddingEvent(InformationQueryingComponentEvent):
     node_occurrences: dict[int, int]
     adjlist: dict[int, list[int]]
+
+
+class NewsSearchResultsEvent(InformationQueryingComponentEvent):
+    results: list[dict[str, str]]

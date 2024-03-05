@@ -4,6 +4,7 @@ from .events import (
     NewArticleTextEvent,
     MaximalEntityCooccurrenceSetEvent,
     NewsEmbeddingEvent,
+    NewsSearchResultsEvent,
 )
 
 
@@ -12,6 +13,7 @@ class Topic(enum.Enum):
     NEW_ARTICLE_TEXT = "new_article_text"
     MAXIMAL_ENTITY_COOCCURRENCE_SET = "maximal_entity_cooccurrence_set"
     NEWS_EMBEDDING = "news_embedding"
+    NEWS_SEARCH_RESULTS = "news_search_results"
 
 
 topic_to_type = {
@@ -19,6 +21,7 @@ topic_to_type = {
     Topic.NEW_ARTICLE_TEXT: NewArticleTextEvent,
     Topic.MAXIMAL_ENTITY_COOCCURRENCE_SET: MaximalEntityCooccurrenceSetEvent,
     Topic.NEWS_EMBEDDING: NewsEmbeddingEvent,
+    Topic.NEWS_SEARCH_RESULTS: NewsSearchResultsEvent,
 }
 
 
