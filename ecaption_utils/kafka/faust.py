@@ -11,20 +11,11 @@ class FaustApplication(enum.Enum):
     Chatbot = "Chatbot"
 
 
-faust_application_to_port: dict[FaustApplication, int] = {
-    FaustApplication.Gateway: 6066,
-    FaustApplication.WebScraper: 6067,
-    FaustApplication.NLP: 6068,
-    FaustApplication.NewsEmbedding: 6069,
-    FaustApplication.Chatbot: 6070,
-}
-
-
-def get_faust_app(app_id: FaustApplication):
+def get_faust_app(app_id: FaustApplication, broker_url: str, port: int):
     return faust.App(
-        app_id.value,
-        broker="kafka://localhost:9092",
-        web_port=faust_application_to_port[app_id],
+        app_id.value,  # TODO: Might have to make this unique when scaling horizontally
+        broker=broker_url,
+        web_port=port,
     )
 
 
