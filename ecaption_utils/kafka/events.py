@@ -2,15 +2,19 @@ import faust
 
 
 class InformationQueryingComponentEvent(faust.Record):
+    request_id: int
     url: str
 
 
 class NewArticleUrlEvent(InformationQueryingComponentEvent):
-    request_id: int
+    pass
 
 
-class NewArticleTextEvent(InformationQueryingComponentEvent):
+class NewArticleExtractedEvent(InformationQueryingComponentEvent):
+    title: str
+    description: str
     text: str
+    image: str
 
 
 class MaximalEntityCooccurrenceSetEvent(InformationQueryingComponentEvent):
