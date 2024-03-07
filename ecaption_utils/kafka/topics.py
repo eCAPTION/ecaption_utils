@@ -1,11 +1,12 @@
 import enum
-from .events import (
+from .events.information_querying_events import (
     NewArticleUrlEvent,
     NewArticleExtractedEvent,
     MaximalEntityCooccurrenceSetEvent,
     NewsEmbeddingEvent,
     NewsSearchResultsEvent,
 )
+from .events.error_event import ErrorEvent
 
 
 class Topic(enum.Enum):
@@ -14,6 +15,7 @@ class Topic(enum.Enum):
     MAXIMAL_ENTITY_COOCCURRENCE_SET = "maximal_entity_cooccurrence_set"
     NEWS_EMBEDDING = "news_embedding"
     NEWS_SEARCH_RESULTS = "news_search_results"
+    ERROR = "error"
 
 
 topic_to_type = {
@@ -22,6 +24,7 @@ topic_to_type = {
     Topic.MAXIMAL_ENTITY_COOCCURRENCE_SET: MaximalEntityCooccurrenceSetEvent,
     Topic.NEWS_EMBEDDING: NewsEmbeddingEvent,
     Topic.NEWS_SEARCH_RESULTS: NewsSearchResultsEvent,
+    Topic.ERROR: ErrorEvent,
 }
 
 

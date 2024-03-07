@@ -1,6 +1,7 @@
 import enum
 import faust
 from .topics import Topic, topic_to_type
+from .events import ErrorEvent
 
 
 class FaustApplication(enum.Enum):
@@ -29,3 +30,18 @@ def initialize_topics(app: faust.App, topics: list[Topic]):
         )
 
     return initialized_topics
+
+
+def get_error_handler(app: faust.App):
+    error_topic = app.topic(Topic.ERROR.value, value_type=topic_to_type[Topic.ERROR])
+
+    async def handle_error(request_id: int, error_type: str, error_message: str):
+        error_event = ErrorEvent(
+            request_id=request_id,
+            error_type=error_type,
+            error_message=error_message,
+        )
+
+        await error_topic.send(value=error_event)
+
+    return handle_error

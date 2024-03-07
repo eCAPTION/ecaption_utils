@@ -1,8 +1,7 @@
-import faust
+from .base_event import BaseEvent
 
 
-class InformationQueryingComponentEvent(faust.Record):
-    request_id: int
+class InformationQueryingComponentEvent(BaseEvent):
     url: str
 
 
