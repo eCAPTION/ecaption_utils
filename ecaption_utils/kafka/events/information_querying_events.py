@@ -27,3 +27,16 @@ class NewsEmbeddingEvent(InformationQueryingComponentEvent):
 
 class NewsSearchResultsEvent(InformationQueryingComponentEvent):
     results: list[dict[str, str]]
+
+
+class InformationQueryingComponentResultsEvent(InformationQueryingComponentEvent):
+    title: str
+    description: str
+    image: str
+    related_articles: list[dict[str, str]]
+    related_facts: list[str]
+
+    # For the graph image
+    adjlist: dict[int, list[int]]
+    node_occurrences: dict[int, int]
+    entity_labels: dict[int, str]
