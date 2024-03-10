@@ -7,6 +7,12 @@ from .events.information_querying_events import (
     NewsSearchResultsEvent,
 )
 from .events.error_event import ErrorEvent
+from .events.chatbot_events import (
+    AddInstructionEvent,
+    DeleteInstructionEvent,
+    NewInfographicEvent,
+    ModifiedInfographicEvent,
+)
 
 
 class Topic(enum.Enum):
@@ -16,6 +22,10 @@ class Topic(enum.Enum):
     NEWS_EMBEDDING = "news_embedding"
     NEWS_SEARCH_RESULTS = "news_search_results"
     ERROR = "error"
+    ADD_INSTRUCTION = "add_instruction"
+    DELETE_INSTRUCTION = "delete_instruction"
+    NEW_INFOGRAPHIC = "new_infographic"
+    MODIFIED_INFOGRAPHIC = "modified_infographic"
 
 
 topic_to_type = {
@@ -25,6 +35,10 @@ topic_to_type = {
     Topic.NEWS_EMBEDDING: NewsEmbeddingEvent,
     Topic.NEWS_SEARCH_RESULTS: NewsSearchResultsEvent,
     Topic.ERROR: ErrorEvent,
+    Topic.ADD_INSTRUCTION: AddInstructionEvent,
+    Topic.DELETE_INSTRUCTION: DeleteInstructionEvent,
+    Topic.NEW_INFOGRAPHIC: NewInfographicEvent,
+    Topic.MODIFIED_INFOGRAPHIC: ModifiedInfographicEvent,
 }
 
 
