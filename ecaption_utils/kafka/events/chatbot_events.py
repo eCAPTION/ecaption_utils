@@ -18,6 +18,16 @@ class DeleteInstructionEvent(BaseInstructionEvent):
     infographic_section: str
 
 
+# Format: I want to move [target_section] to the [direction] of [reference_section]
+# Example: relocate the counter showing the infographic's sharing activity to the right of the infographic's knowledge graph section
+# Possible infographic sections: Header, Number of Shares, Vote on Reliability, Related Facts, Latest Comments, Knowledge Graph Summaries, Similar Articles
+# Possible directions: right, left, above, below
+class MoveInstructionEvent(BaseInstructionEvent):
+    target_section: str
+    reference_section: str
+    direction: str
+
+
 # Chatbot will listen to this event for newly generated infographics
 class NewInfographicEvent(BaseEvent):
     infographic_link: str

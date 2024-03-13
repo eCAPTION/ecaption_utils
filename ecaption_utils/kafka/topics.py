@@ -10,6 +10,7 @@ from .events.error_event import ErrorEvent
 from .events.chatbot_events import (
     AddInstructionEvent,
     DeleteInstructionEvent,
+    MoveInstructionEvent,
     NewInfographicEvent,
     ModifiedInfographicEvent,
 )
@@ -24,6 +25,7 @@ class Topic(enum.Enum):
     ERROR = "error"
     ADD_INSTRUCTION = "add_instruction"
     DELETE_INSTRUCTION = "delete_instruction"
+    MOVE_INSTRUCTION = "move_instruction"
     NEW_INFOGRAPHIC = "new_infographic"
     MODIFIED_INFOGRAPHIC = "modified_infographic"
 
@@ -37,6 +39,7 @@ topic_to_type = {
     Topic.ERROR: ErrorEvent,
     Topic.ADD_INSTRUCTION: AddInstructionEvent,
     Topic.DELETE_INSTRUCTION: DeleteInstructionEvent,
+    Topic.MOVE_INSTRUCTION: MoveInstructionEvent,
     Topic.NEW_INFOGRAPHIC: NewInfographicEvent,
     Topic.MODIFIED_INFOGRAPHIC: ModifiedInfographicEvent,
 }
