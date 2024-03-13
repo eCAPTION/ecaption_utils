@@ -11,6 +11,7 @@ class FaustApplication(enum.Enum):
     NewsEmbedding = "news_embedding"
     Chatbot = "chatbot"
     NewsSearch = "news_search"
+    InfographicGeneration = "infographic_generation"
 
 
 def get_faust_app(app_id: FaustApplication, broker_url: str, port: int):
