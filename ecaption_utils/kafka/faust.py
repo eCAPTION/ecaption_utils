@@ -9,8 +9,9 @@ class FaustApplication(enum.Enum):
     WebScraper = "web_scraper"
     NLP = "nlp"
     NewsEmbedding = "news_embedding"
-    Chatbot = "chatbot"
     NewsSearch = "news_search"
+    FactQuerying = "fact_querying"
+    Chatbot = "chatbot"
     InfographicGeneration = "infographic_generation"
 
 

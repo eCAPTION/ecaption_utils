@@ -5,6 +5,7 @@ from .events.information_querying_events import (
     MaximalEntityCooccurrenceSetEvent,
     NewsEmbeddingEvent,
     NewsSearchResultsEvent,
+    InformationQueryingComponentResultsEvent,
 )
 from .events.error_event import ErrorEvent
 from .events.chatbot_events import (
@@ -22,6 +23,7 @@ class Topic(enum.Enum):
     MAXIMAL_ENTITY_COOCCURRENCE_SET = "maximal_entity_cooccurrence_set"
     NEWS_EMBEDDING = "news_embedding"
     NEWS_SEARCH_RESULTS = "news_search_results"
+    INFORMATION_QUERYING_RESULTS = "information_querying_results"
     ERROR = "error"
     ADD_INSTRUCTION = "add_instruction"
     DELETE_INSTRUCTION = "delete_instruction"
@@ -36,6 +38,7 @@ topic_to_type = {
     Topic.MAXIMAL_ENTITY_COOCCURRENCE_SET: MaximalEntityCooccurrenceSetEvent,
     Topic.NEWS_EMBEDDING: NewsEmbeddingEvent,
     Topic.NEWS_SEARCH_RESULTS: NewsSearchResultsEvent,
+    Topic.INFORMATION_QUERYING_RESULTS: InformationQueryingComponentResultsEvent,
     Topic.ERROR: ErrorEvent,
     Topic.ADD_INSTRUCTION: AddInstructionEvent,
     Topic.DELETE_INSTRUCTION: DeleteInstructionEvent,
