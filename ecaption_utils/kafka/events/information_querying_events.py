@@ -22,8 +22,9 @@ class MaximalEntityCooccurrenceSetEvent(InformationQueryingComponentEvent):
 
 class NewsEmbeddingEvent(InformationQueryingComponentEvent):
     node_occurrences: dict[int, int]
-    adjlist: dict[int, list[int]]
+    adjlist: dict[int, list[tuple[int, int]]]
     entity_labels: dict[int, str]
+    property_labels: dict[int, str]
 
 
 class NewsSearchResultsEvent(InformationQueryingComponentEvent):
@@ -33,9 +34,10 @@ class NewsSearchResultsEvent(InformationQueryingComponentEvent):
     related_articles: list[dict[str, str]]
 
     # For the graph image
-    adjlist: dict[int, list[int]]
+    adjlist: dict[int, list[tuple[int, int]]]
     node_occurrences: dict[int, int]
     entity_labels: dict[int, str]
+    property_labels: dict[int, str]
 
 
 class InformationQueryingComponentResultsEvent(InformationQueryingComponentEvent):
@@ -46,6 +48,7 @@ class InformationQueryingComponentResultsEvent(InformationQueryingComponentEvent
     related_facts: list[str]
 
     # For the graph image
-    adjlist: dict[int, list[int]]
+    adjlist: dict[int, list[tuple[int, int]]]
     node_occurrences: dict[int, int]
     entity_labels: dict[int, str]
+    property_labels: dict[int, str]
